@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+.button {
+  /* outline: 1px solid rgb(255, 0, 0); */
+  color: black;
+  border-radius: 30px;
+  padding: 1rem 2rem;
+  font-weight: 700;
+}
+a:hover {
+  color: rgb(193, 248, 110);
+}
+.thin {
+  padding: 0.5rem 2rem;
+  font-weight: 400;
+}
+.white {
+  background-color: white;
+  color: black;
+}
+.white:hover {
+  color: black;
+  background-color: rgb(193, 248, 110);
+}
+.black {
+  background-color: black;
+  color: white;
+}
+.green {
+  background-color: rgb(183, 255, 76);
+}
+.button.green:hover {
+  color: black;
+  background-color: white;
+}
+.headline {
+  font-size: 50px;
+  text-align: center;
+  margin: 1rem 0;
+  max-width: 550px;
+}
+.small-parag {
+  font-size: 12px;
+  text-align: center;
+  max-width: 450px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+.page {
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+nav {
+  width: 100%;
+  position: absolute;
+  max-width: inherit;
+  margin: 0 auto;
+}
+.nav-container {
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+  display: flex;
+  color: white;
+  max-width: 1000px;
+}
+nav a {
+  color: white;
+}
+.nav-logo {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  margin-right: auto;
+
+  display: flex;
+  align-items: center;
+}
+.nav-menu {
+  display: flex;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.nav-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+.nav-authorize {
+  margin-left: auto;
+}
+.nav-authorize a {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+}
+
+main section {
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-hero {
+  background-image: linear-gradient(to bottom, black 50%, transparent 50%),
+    linear-gradient(to right, black 98%, rgba(255, 255, 255, 0.15) 2%);
+  background-size: 65px 5%;
+  background-position: 0 0;
+
+  padding-bottom: 20rem;
+  padding-top: 10rem;
+}
+
+.main-open-tabs-container {
+  width: 400px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem 0;
+
+  display: flex;
+  justify-content: center;
+}
+.main-open-tabs-container .block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 0.5rem 1rem;
+}
+.cross {
+  transform: translate(-15px, 1px);
+}
+.main-open-tabs-container h4 {
+  padding: 0.5rem;
+  font-weight: 500;
+
+  background: linear-gradient(to right, white 60%, black 85%);
+  background-clip: text;
+  color: transparent;
+}
+.main-open-tabs .small-parag {
+  margin-top: 1rem;
+  color: black;
+}

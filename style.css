@@ -18,7 +18,7 @@ ul {
   font-weight: 700;
 }
 a:hover {
-  color: rgb(193, 248, 110);
+  color: rgb(189, 255, 89);
 }
 
 .thin {
@@ -31,7 +31,7 @@ a:hover {
 }
 .button.white:hover {
   color: black;
-  background-color: rgb(193, 248, 110);
+  background-color: rgb(189, 255, 89);
 }
 .black {
   background-color: black;
@@ -41,7 +41,7 @@ a:hover {
   color: rgba(0, 0, 0, 0.3);
 }
 .green {
-  background-color: rgb(193, 248, 110);
+  background-color: rgb(189, 255, 89);
 }
 .button.green:hover {
   color: black;
@@ -110,7 +110,7 @@ nav a {
 .nav-logo:hover,
 .nav-logo:hover a {
   cursor: pointer;
-  color: rgb(193, 248, 110);
+  color: rgb(189, 255, 89);
 }
 .nav-menu {
   display: flex;
@@ -224,7 +224,7 @@ main section {
   border-radius: 10px;
 }
 .main-platform-connect-list li.selected {
-  background-color: rgb(193, 248, 110);
+  background-color: rgb(189, 255, 89);
 }
 .main-platform-connect-list img {
   min-width: 100%;
@@ -269,7 +269,7 @@ main section {
   height: 25px;
   border-radius: 15px;
   margin: 0 5px;
-  background-color: rgb(193, 248, 110);
+  background-color: rgb(189, 255, 89);
 }
 .main-get-deal-plans {
   display: flex;

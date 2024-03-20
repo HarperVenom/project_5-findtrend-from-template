@@ -67,6 +67,7 @@ a:hover {
 .page {
   max-width: 2000px;
   margin: 0 auto;
+  position: relative;
 }
 
 nav {
@@ -74,6 +75,7 @@ nav {
   position: absolute;
   max-width: inherit;
   margin: 0 auto;
+  z-index: 6;
 }
 .nav * {
   white-space: nowrap;
@@ -81,10 +83,11 @@ nav {
 .nav-container {
   position: relative;
   margin: 0 auto;
-  padding: 1rem 3rem;
+  padding: 1rem 3%;
   display: flex;
   color: white;
 }
+
 nav a {
   color: white;
   white-space: nowrap;
@@ -111,10 +114,6 @@ nav a {
 }
 .nav-menu {
   display: flex;
-
-  /* position: absolute;
-  left: 50%;
-  transform: translateX(-50%); */
 }
 .nav-menu a {
   display: block;
@@ -129,6 +128,9 @@ nav a {
 }
 .nav-authorize a {
   padding: 0.5rem 1rem;
+}
+main {
+  position: relative;
 }
 
 main section {
@@ -181,7 +183,6 @@ main section {
   margin-top: 1rem;
   color: black;
 }
-
 .headline.s40 {
   font-size: 40px;
 }
@@ -302,7 +303,7 @@ main section {
   color: black;
   border-radius: 10px;
   width: 32%;
-  height: 450px;
+  min-height: 450px;
   padding: 3%;
 
   box-sizing: border-box;
@@ -365,7 +366,7 @@ footer {
   text-decoration: underline;
 }
 
-.nav-menu-button,
+#nav-menu-button,
 .main-hero-bars {
   display: none;
 }
@@ -374,23 +375,117 @@ footer {
 .main-open-tabs .text.bot {
   display: none;
 }
+.main-get-deal .text {
+  display: none;
+}
 
 @media screen and (max-width: 900px) {
   .nav-menu,
-  .nav-authorize {
+  .nav-authorize,
+  .nav-logo a {
     display: none;
   }
-  .nav-menu-button {
-    padding: 10px;
+  .nav-logo {
+    z-index: 2;
+  }
+  #nav-menu-button,
+  #menu-open-button,
+  #menu-close-button {
+    z-index: 1;
+  }
+  #menu-close-button,
+  #menu-open-button {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
   }
-  .nav-menu-button:hover {
+  #menu-close-button,
+  #menu-open-button {
+    padding: 10px;
+    display: none;
+  }
+  #menu-open-button {
+    width: 20px;
+  }
+  #menu-close-button {
+    padding: 13px;
+  }
+
+  #menu-close-button.shown,
+  #menu-open-button.shown {
+    display: flex;
+  }
+  /*Menu opened*/
+  #slide-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-in;
+  }
+  .slide-menu-links,
+  .slide-menu-authorize {
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  #slide-menu .slide-menu-authorize a,
+  #slide-menu li {
+    z-index: 5;
+    font-size: 20px;
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 50%;
+  }
+  #slide-menu.active {
+    max-height: 500px;
+    padding-top: 72px;
+    padding-bottom: 2rem;
+    transition: max-height 0.5s ease-out, padding-top 0.2s ease-out;
+  }
+  .slide-menu-authorize {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+  }
+  #slide-cover {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.5s ease;
+    z-index: 5;
+  }
+  #slide-cover.show {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  /*<=Menu opened*/
+
+  #nav-menu-button {
+    display: flex;
+  }
+  #menu-open-button:hover,
+  #menu-close-button:hover {
     cursor: pointer;
     background-color: rgba(193, 248, 110, 0.2);
     border-radius: 5px;
   }
+
   .headline {
     font-size: 40px;
   }
@@ -405,12 +500,14 @@ footer {
     padding-bottom: 8rem;
   }
   .main-hero-bars {
+    position: relative;
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     max-width: 250px;
   }
   .block {
+    position: relative;
     background-color: rgb(22, 22, 22);
     box-shadow: 5px 5px 10px black;
   }
@@ -455,11 +552,11 @@ footer {
   }
   .main-open-tabs .text.top {
     scale: 1.5;
-    transform: translate(100px, -70px);
+    transform: translate(50px, -70px);
   }
   .main-open-tabs .text.bot {
     scale: 1.5;
-    transform: translate(-100px, 70px);
+    transform: translate(-50px, 70px);
   }
   .main-startups-grow-list {
     grid-template-columns: repeat(2, 1fr);
@@ -485,6 +582,7 @@ footer {
     margin-bottom: 6rem;
   }
   .main-get-deal .text {
+    display: block;
     position: absolute;
     scale: 1.2;
     transform: translate(65px, 105px);
@@ -498,7 +596,7 @@ footer {
     width: 100%;
     margin-bottom: 2rem;
     border-radius: 20px;
-    height: 600px;
+    min-height: 600px;
   }
   .main-get-deal-plans .plan-features {
     font-size: 18px;

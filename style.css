@@ -104,6 +104,11 @@ nav a {
   display: flex;
   align-items: center;
 }
+.nav-logo:hover,
+.nav-logo:hover a {
+  cursor: pointer;
+  color: rgb(193, 248, 110);
+}
 .nav-menu {
   display: flex;
 
@@ -134,7 +139,7 @@ main section {
 }
 .main-hero {
   background-image: linear-gradient(to bottom, black 50%, transparent 50%),
-    linear-gradient(to right, black 99%, rgba(255, 255, 255, 0.15) 1%);
+    linear-gradient(to right, black 98%, rgba(255, 255, 255, 0.1) 2%);
   background-size: 65px 4%;
   background-position: center center;
 
@@ -152,17 +157,19 @@ main section {
   justify-content: center;
   margin: 2rem 0;
 }
-.main-open-tabs-container .block {
+/* .main-open-tabs-container*/
+.block {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: black;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 0.2rem 0.8rem 1.5rem;
 }
 .cross {
   transform: translate(-15px, 1px);
 }
-.main-open-tabs-container h4 {
+.block-text {
+  flex-grow: 1;
   padding: 0.5rem;
   font-weight: 500;
 
@@ -295,7 +302,7 @@ main section {
   color: black;
   border-radius: 10px;
   width: 32%;
-  height: 400px;
+  height: 450px;
   padding: 3%;
 
   box-sizing: border-box;
@@ -352,4 +359,169 @@ footer {
 }
 .footer-links a {
   margin: 0 1rem;
+  color: black;
+}
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.nav-menu-button,
+.main-hero-bars {
+  display: none;
+}
+
+.main-open-tabs .text.top,
+.main-open-tabs .text.bot {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .nav-menu,
+  .nav-authorize {
+    display: none;
+  }
+  .nav-menu-button {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .nav-menu-button:hover {
+    cursor: pointer;
+    background-color: rgba(193, 248, 110, 0.2);
+    border-radius: 5px;
+  }
+  .headline {
+    font-size: 40px;
+  }
+  .button {
+    font-size: 14px;
+    padding: 1em 2em;
+  }
+  main section {
+    padding: 5rem 2rem;
+  }
+  .main-hero {
+    padding-bottom: 8rem;
+  }
+  .main-hero-bars {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+  }
+  .block {
+    background-color: rgb(22, 22, 22);
+    box-shadow: 5px 5px 10px black;
+  }
+  .block img {
+    max-width: 10%;
+  }
+  .block-text {
+    background: linear-gradient(to right, white 60%, rgb(22, 22, 22) 85%);
+    background-clip: text;
+    color: transparent;
+  }
+  .block.first {
+    transform: rotate(-5deg);
+    z-index: 4;
+  }
+  .block.second {
+    transform: rotate(2deg);
+    z-index: 3;
+  }
+  .block.third {
+    transform: rotate(-3deg);
+    z-index: 2;
+  }
+  .block.fourth {
+    transform: rotate(5deg);
+    z-index: 1;
+  }
+  .main-open-tabs-container {
+    width: 80%;
+    padding: 3rem 2rem;
+    margin: 5rem 0;
+  }
+  .main-open-tabs .block {
+    font-size: 20px;
+    width: 100%;
+    box-shadow: none;
+  }
+  .main-open-tabs .text.top,
+  .main-open-tabs .text.bot {
+    display: block;
+    position: absolute;
+  }
+  .main-open-tabs .text.top {
+    scale: 1.5;
+    transform: translate(100px, -70px);
+  }
+  .main-open-tabs .text.bot {
+    scale: 1.5;
+    transform: translate(-100px, 70px);
+  }
+  .main-startups-grow-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  .main-platform-connect-list {
+    display: block;
+    align-self: self-start;
+    padding: 1rem 0;
+    width: 100%;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  .main-platform-connect-list li {
+    margin: 1rem;
+    min-width: 50px;
+    display: inline-block;
+    white-space: normal;
+  }
+
+  .main-get-deal-switch {
+    margin-bottom: 6rem;
+  }
+  .main-get-deal .text {
+    position: absolute;
+    scale: 1.2;
+    transform: translate(65px, 105px);
+  }
+  .main-get-deal-plans {
+    flex-direction: column;
+  }
+  .main-get-deal-plans .plan {
+    padding: 1em;
+    font-size: 30px;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 20px;
+    height: 600px;
+  }
+  .main-get-deal-plans .plan-features {
+    font-size: 18px;
+  }
+  .main-get-deal-plans .plan .button {
+    font-size: 20px;
+    padding: 1em 0;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 1rem;
+  }
+  .footer-logo {
+    margin: 1rem;
+  }
+  .footer-links {
+    flex-direction: column;
+    justify-content: start;
+  }
+  .footer-links li {
+    margin: 1rem 0;
+  }
 }

@@ -20,6 +20,7 @@ ul {
 a:hover {
   color: rgb(193, 248, 110);
 }
+
 .thin {
   padding: 0.5rem 2rem;
   font-weight: 400;
@@ -28,7 +29,7 @@ a:hover {
   background-color: white;
   color: black;
 }
-.white:hover {
+.button.white:hover {
   color: black;
   background-color: rgb(193, 248, 110);
 }
@@ -36,8 +37,11 @@ a:hover {
   background-color: black;
   color: white;
 }
+.gray {
+  color: rgba(0, 0, 0, 0.3);
+}
 .green {
-  background-color: rgb(183, 255, 76);
+  background-color: rgb(193, 248, 110);
 }
 .button.green:hover {
   color: black;
@@ -56,6 +60,9 @@ a:hover {
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 2rem;
 }
+.mw-1200 {
+  max-width: 1000px;
+}
 
 .page {
   max-width: 2000px;
@@ -68,21 +75,30 @@ nav {
   max-width: inherit;
   margin: 0 auto;
 }
+.nav * {
+  white-space: nowrap;
+}
 .nav-container {
   position: relative;
   margin: 0 auto;
   padding: 1rem 3rem;
   display: flex;
   color: white;
-  max-width: 1000px;
 }
 nav a {
   color: white;
+  white-space: nowrap;
+}
+.logo {
+  min-width: 40px;
+  margin-right: 0.5rem;
 }
 .nav-logo {
+  flex-grow: 1;
+  max-width: 225px;
+
   font-size: 24px;
   font-weight: 700;
-  padding: 0 0.5rem;
   margin-right: auto;
 
   display: flex;
@@ -91,20 +107,23 @@ nav a {
 .nav-menu {
   display: flex;
 
-  position: absolute;
+  /* position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
 }
 .nav-menu a {
   display: block;
   padding: 0.5rem 1rem;
 }
 .nav-authorize {
+  flex-grow: 1;
+  max-width: 225px;
   margin-left: auto;
+  display: flex;
+  justify-content: end;
 }
 .nav-authorize a {
-  display: inline-block;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 main section {
@@ -115,9 +134,9 @@ main section {
 }
 .main-hero {
   background-image: linear-gradient(to bottom, black 50%, transparent 50%),
-    linear-gradient(to right, black 98%, rgba(255, 255, 255, 0.15) 2%);
-  background-size: 65px 5%;
-  background-position: 0 0;
+    linear-gradient(to right, black 99%, rgba(255, 255, 255, 0.15) 1%);
+  background-size: 65px 4%;
+  background-position: center center;
 
   padding-bottom: 20rem;
   padding-top: 10rem;
@@ -131,6 +150,7 @@ main section {
 
   display: flex;
   justify-content: center;
+  margin: 2rem 0;
 }
 .main-open-tabs-container .block {
   display: flex;
@@ -153,4 +173,183 @@ main section {
 .main-open-tabs .small-parag {
   margin-top: 1rem;
   color: black;
+}
+
+.headline.s40 {
+  font-size: 40px;
+}
+.main-helps-increase .headline {
+  text-align: start;
+}
+.main-startups-grow-list {
+  margin: 3rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+.main-startups-grow-list li {
+  display: flex;
+  align-items: center;
+  padding: 10% 15%;
+  background-color: rgb(235, 235, 235);
+}
+.main-startups-grow-list img {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.main-platform-connect {
+  background-color: rgb(235, 235, 235);
+}
+.main-platform-connect-list {
+  margin: 3rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.main-platform-connect-list li {
+  max-width: 5%;
+  padding: 2.5%;
+  margin: 1%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+.main-platform-connect-list li.selected {
+  background-color: rgb(193, 248, 110);
+}
+.main-platform-connect-list img {
+  min-width: 100%;
+  max-width: 100%;
+}
+.twitter-tweet {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.button.view-more-trend {
+  margin-top: 3rem;
+}
+
+.main-get-deal {
+  background-color: black;
+  color: white;
+}
+.main-get-deal-switch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.main-get-deal-switch .headline {
+  font-size: 16px;
+  margin: 0 1em;
+  font-weight: 400;
+}
+#yearly {
+  color: rgba(255, 255, 255, 0.4);
+}
+.main-get-deal-switch .switch {
+  width: 65px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.main-get-deal-switch .switch .pin {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  margin: 0 5px;
+  background-color: rgb(193, 248, 110);
+}
+.main-get-deal-plans {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.plan-subhead {
+  font-weight: 600;
+}
+.plan-price {
+  display: flex;
+  align-items: baseline;
+
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  padding: 1rem 0;
+  margin: 0.8rem 0;
+}
+.plan-features {
+  font-size: 10px;
+  font-weight: 600;
+}
+.plan-features li {
+  display: flex;
+  margin: 1em 0;
+  align-items: center;
+}
+.plan-features li svg {
+  margin-right: 1em;
+}
+.main-get-deal .plan {
+  color: black;
+  border-radius: 10px;
+  width: 32%;
+  height: 400px;
+  padding: 3%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+}
+.main-get-deal .green.button:hover {
+  color: white;
+  background-color: black;
+}
+.main-get-deal .black.button:hover {
+  color: black;
+  background-color: white;
+}
+.main-get-deal .plan .button {
+  font-size: 14px;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: auto;
+}
+
+.dark-green {
+  color: rgb(146, 190, 81);
+}
+.main-join .headline {
+  margin: 0;
+}
+.main-join .button {
+  padding: 1rem 3rem;
+  margin-top: 5rem;
+}
+
+footer {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  padding: 2rem;
+  justify-content: space-between;
+}
+.footer-logo {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.footer-logo svg {
+  margin-right: 0.5rem;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  margin: 0 1rem;
 }

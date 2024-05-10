@@ -464,6 +464,7 @@ footer {
     flex-direction: column;
   }
   #slide-cover {
+    pointer-events: none;
     position: absolute;
     content: "";
     top: 0;
